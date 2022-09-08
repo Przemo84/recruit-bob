@@ -1,0 +1,3 @@
+FROM mysql:latest
+
+CMD ["--character-set-server=utf8", "--collation-server=utf8_general_ci"]

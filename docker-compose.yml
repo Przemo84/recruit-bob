@@ -1,0 +1,18 @@
+version: '3'
+services:
+    mysql:
+        build: ./src/main/docker/mysql
+        container_name: "mysql-recruit"
+        environment:
+            - MYSQL_DATABASE=db
+            - MYSQL_USERNAME=root
+            - MYSQL_ROOT_PASSWORD=topsecretpassword
+        ports:
+          - 3307:3306
+        networks:
+            - nginx-proxy
+
+networks:
+    nginx-proxy:
+        external:
+            name: nginx-proxy
